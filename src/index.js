@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './normalize.css';
-import './reset.custom.css';
-import routes from './routes';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+
+import './styles/normalize.css';
+import './styles/reset.custom.css';
+
 import Catalog from './pages/Catalog';
 import Drink from './pages/Drink';
 
