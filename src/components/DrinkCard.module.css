@@ -1,0 +1,43 @@
+.card {
+  width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-bottom: 36px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.image {
+  height: 300px;
+  width: 300px;
+}
+
+.content {
+  padding: 12px;
+}
+
+.header {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+.name {
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.tile-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tile {
+  padding: 2px 4px;
+  background-color: lightblue;
+  border-radius: 4px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}

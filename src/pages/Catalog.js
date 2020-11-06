@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import fakeApi from '../services/fakeApi';
 
 import SearchInput from '../components/SearchInput';
+import DrinkList from '../components/DrinkList';
 import DrinkCategories from '../components/DrinkCategories';
 
 const Catalog = () => {
@@ -14,6 +15,12 @@ const Catalog = () => {
     setDrinks(searchedDrinks);
   }
 
+  const getDrinksByCategory = (category) => {
+    const categoryDrinks = fakeApi.getDrinksByCategory(category);
+    console.log(categoryDrinks)
+    setDrinks(categoryDrinks);
+  }
+
   useEffect(() => {
     const response = fakeApi.getDrinks();
     const respCategories = fakeApi.getDrinkCategories();
@@ -22,11 +29,11 @@ const Catalog = () => {
   }, []);
 
   return (
-    <div>
-    <h1>Catalog</h1>
-    <SearchInput handleSearch={getDrinksBySearch} />
-    {drinks && drinks[0] ? <p>{drinks[0].strDrink}</p> : null}
-    <DrinkCategories categories={categories} />
+    <div className="container">
+      <h1>Catalog</h1>
+      <SearchInput handleSearch={getDrinksBySearch} />
+      <DrinkList drinks={drinks} />
+      <DrinkCategories categories={categories} handleCategorySelect={getDrinksByCategory} />
     </div>
   )
 };

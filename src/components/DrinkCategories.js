@@ -1,8 +1,9 @@
-const DrinkCategories = ({categories}) => (
+const DrinkCategories = ({categories, handleCategorySelect}) => (
   <div>
     <ul>
+      <li onClick={() => handleCategorySelect('all')}>All Drinks</li>
       {categories.map(category => (
-        <li>{category}</li>
+        <li onClick={() => handleCategorySelect(category)}>{category}</li>
       ))}
     </ul>
   </div>
