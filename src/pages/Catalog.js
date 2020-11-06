@@ -2,19 +2,31 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import fakeApi from '../services/fakeApi';
 
+import SearchInput from '../components/SearchInput';
+import DrinkCategories from '../components/DrinkCategories';
+
 const Catalog = () => {
-  const [drinks, setDrinks] = useState(0);
+  const [drinks, setDrinks] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+  const getDrinksBySearch = (searchInput) => {
+    const searchedDrinks = fakeApi.getDrinksBySearch(searchInput);
+    setDrinks(searchedDrinks);
+  }
 
   useEffect(() => {
     const response = fakeApi.getDrinks();
-    console.log(response);
+    const respCategories = fakeApi.getDrinkCategories();
     setDrinks(response);
-  }, [drinks]);
+    setCategories(respCategories);
+  }, []);
 
   return (
     <div>
     <h1>Catalog</h1>
-    {drinks ? <p>{drinks[0].strDrink}</p> : null}
+    <SearchInput handleSearch={getDrinksBySearch} />
+    {drinks && drinks[0] ? <p>{drinks[0].strDrink}</p> : null}
+    <DrinkCategories categories={categories} />
     </div>
   )
 };
