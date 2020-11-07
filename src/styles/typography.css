@@ -1,0 +1,12 @@
+body {
+  font-family: $clear-sans;
+  font-size: 16px;
+  background-color: #F6F8F9;
+}
+
+.container {
+  max-width: 1200px;
+  width: 92%;
+  margin: auto;
+  box-sizing: border-box;
+}

@@ -6,9 +6,12 @@ import SearchInput from '../components/SearchInput';
 import DrinkList from '../components/DrinkList';
 import DrinkCategories from '../components/DrinkCategories';
 
+import styles from './Catalog.module.css';
+
 const Catalog = () => {
   const [drinks, setDrinks] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [selectCategory, setSelectCategory] = useState('all');
 
   const getDrinksBySearch = (searchInput) => {
     const searchedDrinks = fakeApi.getDrinksBySearch(searchInput);
@@ -17,7 +20,7 @@ const Catalog = () => {
 
   const getDrinksByCategory = (category) => {
     const categoryDrinks = fakeApi.getDrinksByCategory(category);
-    console.log(categoryDrinks)
+    setSelectCategory(category);
     setDrinks(categoryDrinks);
   }
 
@@ -30,10 +33,12 @@ const Catalog = () => {
 
   return (
     <div className="container">
-      <h1>Catalog</h1>
+      <h1>Drink Catalog</h1>
       <SearchInput handleSearch={getDrinksBySearch} />
-      <DrinkList drinks={drinks} />
-      <DrinkCategories categories={categories} handleCategorySelect={getDrinksByCategory} />
+      <div className={styles['drinks-wrapper']}>
+        <DrinkCategories categories={categories} selectCategory={selectCategory} handleCategorySelect={getDrinksByCategory} />
+        <DrinkList drinks={drinks} />
+      </div>
     </div>
   )
 };

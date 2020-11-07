@@ -1,9 +1,9 @@
 .bg {
-  background: #eeeeee;
+  background: #F6F8F9;
 }
 
 .list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }

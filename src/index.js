@@ -8,6 +8,7 @@ import {
 
 import './styles/normalize.css';
 import './styles/reset.custom.css';
+import './styles/typography.css';
 
 import Catalog from './pages/Catalog';
 import Drink from './pages/Drink';
