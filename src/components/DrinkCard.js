@@ -20,3 +20,6 @@ const DrinkCard = ({ drink }) => (
 );
 
 export default DrinkCard;
+
+// NOTES
+// Horizontal card type for mobile view

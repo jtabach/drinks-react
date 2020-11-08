@@ -33,7 +33,7 @@ const Catalog = () => {
 
   return (
     <div className="container">
-      <h1>Drink Catalog</h1>
+      <h1 className={styles['title']}>Drink Catalog</h1>
       <SearchInput handleSearch={getDrinksBySearch} />
       <div className={styles['drinks-wrapper']}>
         <DrinkCategories categories={categories} selectCategory={selectCategory} handleCategorySelect={getDrinksByCategory} />

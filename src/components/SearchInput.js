@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import styles from './SearchInput.module.css';
+
 const SearchInput = ({ handleSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -12,10 +14,11 @@ const SearchInput = ({ handleSearch }) => {
   }, [searchTerm]);
 
   return (
-    <div>
-      <input 
+    <div className={styles['search']}>
+      <input
+        className={styles['input']}
         type="text"
-        placeholder="Search by drink name or ingredients"
+        placeholder="Search by drink name"
         value={searchTerm}
         onChange={handleChange} />
     </div>

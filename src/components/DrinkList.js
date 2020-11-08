@@ -10,3 +10,6 @@ const DrinkList = ({ drinks }) => (
 );
 
 export default DrinkList;
+
+// NOTES:
+// Render an element for when there are no matching results

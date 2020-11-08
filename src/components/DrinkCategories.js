@@ -16,3 +16,6 @@ const DrinkCategories = ({categories, selectCategory, handleCategorySelect}) => 
 };
 
 export default DrinkCategories;
+
+// NOTES:
+// Dropdown component for mobile view
