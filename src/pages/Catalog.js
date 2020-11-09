@@ -20,9 +20,11 @@ const Catalog = () => {
 
   const getDrinksByCategory = (category) => {
     const categoryDrinks = fakeApi.getDrinksByCategory(category);
+    const response = fakeApi.getDrinkIngredients();
     setSelectCategory(category);
     setDrinks(categoryDrinks);
   }
+
 
   useEffect(() => {
     const response = fakeApi.getDrinks();
