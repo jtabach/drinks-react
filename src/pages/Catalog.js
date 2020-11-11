@@ -15,6 +15,7 @@ const Catalog = () => {
 
   const getDrinksBySearch = (searchInput) => {
     const searchedDrinks = fakeApi.getDrinksBySearch(searchInput);
+    console.log(searchedDrinks);
     setDrinks(searchedDrinks);
   }
 
